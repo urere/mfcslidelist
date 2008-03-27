@@ -1,0 +1,85 @@
+# REPORT:One page summary of all photos
+
+if ( $#ARGV+1 != 2 ) {
+	die "Two arguments expected";
+}
+
+$DataFile = $ARGV[0];
+$OutputFile = $ARGV[1];
+
+# Read in the print data
+do "$DataFile";
+
+# Open the report file
+open( REPORTFILE, ">$OutputFile" ) || die "Can't open $OutputFile";
+
+my %Keywords;
+my %KeywordCount;
+
+
+# Count all of the films
+
+# Count all of the photos graphs, sub count for each category
+
+# Count all of the keywords
+
+# Build a hask of all of the keywords, the value will be the photo ids
+foreach $PhotoId ( sort keys %Photos ) {
+
+	# Generate a list of keywords for this photo
+	@Kw = split ' ', $Photos{$PhotoId}{"Keywords"};
+
+	# Add this photo to the hash for each keyword
+	foreach $Keyword ( @Kw ) {
+		if ( defined $Keywords{$Keyword} ) {
+			$Keywords{$Keyword} .= " ";
+			$Keywords{$Keyword} .= $PhotoId;
+			$KeywordCount{$Keyword} += 1;
+		} else {
+			$Keywords{$Keyword} = $PhotoId;
+			$KeywordCount{$Keyword} = 1;
+		}
+	}
+}
+
+foreach $Keyword ( sort keys %Keywords ) {
+
+	$Count = $KeywordCount{$Keyword};
+
+	# Process each photo for this keyword
+	@Ph = split ' ', $Keywords{$Keyword};
+	foreach $PhotoId ( @Ph ) {
+		
+		$Rating =        $Photos{$PhotoId}{"Rating"};
+		$PhDescription = $Photos{$PhotoId}{"Description"};
+		$Location =      $Photos{$PhotoId}{"Location"};
+	
+		write( REPORTFILE );
+	}
+	
+	# Force a new page for the next keyword
+	$Old = select( REPORTFILE );
+	$- = 0;
+	select ( $Old );
+}
+
+close( REPORTFILE );
+
+print( "Report Completed.\n" );
+
+# Report Format
+format REPORTFILE =
+@<<<<<<<<  @|||||  ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  ^<<<<<<<<<<<<<<<<<<<<<<<
+$PhotoId,  $Rating,$PhDescription,                 $Location
+~~                 ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  ^<<<<<<<<<<<<<<<<<<<<<<<
+                   $PhDescription,                 $Location
+.
+
+format REPORTFILE_TOP =
+===========================================================================
+Category:  @<<<<<<<<<<<<<<<<<<<<<<<<<<<  (@|||)                    Page @<<
+           $Keyword,                      $Count,                        $%
+===========================================================================
+Photo      Rating  Description                     Location                
+---------------------------------------------------------------------------
+.

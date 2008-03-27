@@ -1,0 +1,792 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\SlideList.ico"
+IDR_SLIDETYPE           ICON    DISCARDABLE     "res\\SlideListDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    SEPARATOR
+    BUTTON      IDM_FILM_CHANGE
+    BUTTON      IDM_ADD_FILM
+    BUTTON      IDM_FILM_REMOVE
+    SEPARATOR
+    BUTTON      IDM_PHOTO_CHANGE
+    BUTTON      IDM_PHOTO_ADD
+    BUTTON      IDM_PHOTO_REMOVE
+    SEPARATOR
+    BUTTON      IDM_PHOTO_SELECT
+    BUTTON      IDM_PHOTO_UNSELECT
+    SEPARATOR
+    BUTTON      IDM_PHOTO_SEARCH
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Print...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "Print Pre&view",              ID_FILE_PRINT_PREVIEW
+        MENUITEM "P&rint Setup...",             ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "Fil&m"
+    BEGIN
+        MENUITEM "Add...",                      IDM_ADD_FILM
+        MENUITEM "&Change...",                  IDM_FILM_CHANGE
+        MENUITEM "&Remove...",                  IDM_FILM_REMOVE
+    END
+    POPUP "&Photographs"
+    BEGIN
+        MENUITEM "&Add...",                     IDM_PHOTO_ADD
+        MENUITEM "&Change...",                  IDM_PHOTO_CHANGE
+        MENUITEM "&Remove",                     IDM_PHOTO_REMOVE
+    END
+    POPUP "&Selection"
+    BEGIN
+        MENUITEM "S&earch...",                  IDM_PHOTO_SEARCH
+        MENUITEM SEPARATOR
+        MENUITEM "&Select Photograph",          IDM_PHOTO_SELECT
+        MENUITEM "&Unselect Photograph",        IDM_PHOTO_UNSELECT
+        MENUITEM SEPARATOR
+        MENUITEM "Select &All In Film",         IDM_FILM_SELECT
+        MENUITEM "Unselect A&ll in Film",       IDM_FILM_UNSELECT
+        MENUITEM SEPARATOR
+        MENUITEM "&Remove All Selections",      IDM_UNSELECT_ALL
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About SlideList...",         ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About SlideList"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "SlideList Version 1.2",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2002",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,14,WS_GROUP
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "SlideList MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "SlideList\0"
+            VALUE "LegalCopyright", "Copyright (C) 2001\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "SlideList.EXE\0"
+            VALUE "ProductName", "SlideList Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "SlideList\n\nSlide\nSlide Files (*.sld)\n.sld\nSlideList.Document\nSlide Document"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "SlideList"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PAGE_SETUP      "Change the printing options\nPage Setup"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Close print preview mode\nCancel Preview"
+    IDS_FILM_TITLE_ADD      "Add Film"
+    IDS_FILM_TITLE_CHANGE   "Change Film"
+    IDS_DEFAULT_FILM_MAKE   "Boots"
+    IDS_FILM_REMOVE_CAPTION "Remove Film"
+    IDS_FILM_REMOVE_MESSAGE "Remove selected film?"
+    IDS_PHOTO_TITLE_ADD     "Add Photo [%u]"
+    IDS_PHOTO_TITLE_CHANGE  "Change Photo [%u]"
+    IDS_PHOTO_REMOVE_CAPTION "Remove Photo"
+    IDS_PHOTO_REMOVE_MESSAGE "Remove selected photo?"
+    IDS_FILM_DUPLICATE_CAPTION "Duplicate Film Number"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_ADD_FILM            "Add new film details"
+    IDM_FILM_CHANGE         "Change existing film details"
+    IDM_FILM_REMOVE         "Remove details of film and its photographs"
+    IDM_ADD_PHOTO           "Add a new photograph details"
+    IDM_PHOTO_CHANGE        "Change existing photograph details"
+    IDM_PHOTO_REMOVE        "Remove photograph details"
+    IDM_PHOTO_SELECT        "Select current photograph"
+    IDM_PHOTO_UNSELECT      "Unselect current photograph"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_FILM_DUPLICATE_MESSAGE "Film number [%u] already exists."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDM_FILM_SELECT         "Select all photographs in current film."
+    IDM_FILM_UNSELECT       "Unselect all photographs in current film."
+    IDM_SEARCH              "Search and select photographs."
+    IDM_PHOTO_SEARCH        "Search for photos."
+    IDM_UNSELECT_ALL        "Unselect all selected photographs."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_VIEW_IMAGE_LIST     BITMAP  DISCARDABLE     "res\\view_ima.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_FILM_DETAILS DIALOG DISCARDABLE  0, 0, 310, 213
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Film"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Year",IDC_STATIC,7,10,16,8
+    EDITTEXT        IDC_FILM_YEAR,51,7,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Number",IDC_STATIC,7,34,26,8,NOT WS_GROUP
+    EDITTEXT        IDC_FILM_NUMBER,51,31,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Description",IDC_STATIC,7,58,36,8,NOT WS_GROUP
+    EDITTEXT        IDC_FILE_DESCRIPTION,51,55,252,14,ES_AUTOHSCROLL
+    LTEXT           "Notes",IDC_STATIC,7,79,20,8,NOT WS_GROUP
+    EDITTEXT        IDC_FILE_NOTES,51,79,252,46,ES_MULTILINE
+    GROUPBOX        "Film Details",IDC_STATIC,7,135,296,61
+    LTEXT           "Make",IDC_STATIC,14,152,19,8
+    COMBOBOX        IDC_FILM_MAKE,51,150,242,56,CBS_DROPDOWN | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Type",IDC_STATIC,14,175,17,8,NOT WS_GROUP
+    COMBOBOX        IDC_FILM_TYPE,51,173,78,45,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Size",IDC_STATIC,190,175,14,8,NOT WS_GROUP
+    COMBOBOX        IDC_FILM_SIZE,233,173,60,45,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,253,7,50,14,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,253,24,50,14
+END
+
+IDD_PHOTO_DETAILS DIALOG DISCARDABLE  0, 0, 329, 279
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Photo"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Number",IDC_STATIC,7,10,26,8
+    EDITTEXT        IDC_PHOTO_NUMBER,51,7,23,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    ES_NUMBER | WS_DISABLED
+    LTEXT           "Rating",IDC_STATIC,7,35,22,8,NOT WS_GROUP
+    COMBOBOX        IDC_RATING_LIST,51,33,74,64,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Description",IDC_STATIC,7,60,36,8,NOT WS_GROUP
+    EDITTEXT        IDC_FILE_DESCRIPTION,51,57,252,14,ES_AUTOHSCROLL
+    LTEXT           "Location",IDC_STATIC,7,85,28,8,NOT WS_GROUP
+    EDITTEXT        IDC_PHOTO_LOCATION,51,82,252,14,ES_AUTOHSCROLL
+    LTEXT           "Keywords",IDC_STATIC,7,110,32,8,NOT WS_GROUP
+    EDITTEXT        IDC_PHOTO_KEYWORDS,51,107,252,14,ES_AUTOHSCROLL
+    LTEXT           "Notes",IDC_STATIC,7,226,20,8,NOT WS_GROUP
+    EDITTEXT        IDC_FILE_NOTES,51,226,252,46,ES_MULTILINE
+    DEFPUSHBUTTON   "OK",IDOK,272,7,50,14,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,272,24,50,14
+    LISTBOX         IDC_KEYWORD_LIST,51,124,252,95,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | LBS_MULTICOLUMN | WS_VSCROLL | 
+                    WS_HSCROLL
+END
+
+IDD_CREATE_PHOTOS DIALOG DISCARDABLE  0, 0, 229, 79
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Add Photos to Film"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Number of photos",IDC_STATIC,42,9,57,8
+    COMBOBOX        IDC_NUMBER_PHOTOS,122,7,48,80,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "First Photograph is 0",IDC_STATIC,42,30,65,8
+    CONTROL         "",IDC_START_AT_ZERO,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,114,30,16,8
+    DEFPUSHBUTTON   "Yes",IDOK,48,58,50,14,WS_GROUP
+    PUSHBUTTON      "No",IDCANCEL,114,58,50,14
+END
+
+IDD_REPORT_SELECTION DIALOG DISCARDABLE  0, 0, 265, 134
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Select Report"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_REPORT_LIST,7,7,177,120,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,200,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,200,24,50,14
+    CONTROL         "&Selected Photographs Only",IDC_SELECTED_PHOTOS,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFT | BS_MULTILINE | WS_TABSTOP,
+                    198,63,55,30
+END
+
+IDD_SEARCH_DIALOG DIALOG DISCARDABLE  0, 0, 346, 246
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Photograph Search"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "Search for ?",IDC_STATIC,7,7,269,91
+    EDITTEXT        IDC_SEARCH_STRING,15,21,251,14,ES_AUTOHSCROLL
+    LISTBOX         IDC_SEARCH_KEYWORD_LIST,15,41,251,45,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | LBS_MULTICOLUMN | WS_VSCROLL | 
+                    WS_HSCROLL | WS_TABSTOP
+    GROUPBOX        "Search where ?",IDC_STATIC,7,100,269,40
+    CONTROL         "Location",IDC_LOCATION_SEARCH,"Button",BS_AUTOCHECKBOX | 
+                    WS_GROUP | WS_TABSTOP,15,116,43,10
+    CONTROL         "Description",IDC_DESCRIPTION_SEARCH,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,113,116,51,10
+    CONTROL         "Keywords",IDC_KEYWORD_SEARCH,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,219,116,47,10
+    LTEXT           "Rating",IDC_STATIC,15,150,22,8
+    COMBOBOX        IDC_SEARCH_RATING,54,148,150,57,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Selection ?",IDC_STATIC,7,168,269,65
+    CONTROL         "Clear existing selection before searching",
+                    IDC_SEARCH_CLEAR_EXISTING,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP | WS_TABSTOP,15,181,142,10
+    CONTROL         "Add to existing selection",IDC_SEARCH_ADD_EXISTING,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,15,198,92,10
+    CONTROL         "Search only within existing selection",
+                    IDC_SEARCH_WITHIN,"Button",BS_AUTORADIOBUTTON | 
+                    WS_TABSTOP,15,215,129,10
+    DEFPUSHBUTTON   "Search",IDOK,289,11,50,14,WS_GROUP
+    PUSHBUTTON      "Cancel",IDCANCEL,289,32,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_FILM_DETAILS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 303
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 206
+    END
+
+    IDD_PHOTO_DETAILS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 322
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 272
+    END
+
+    IDD_CREATE_PHOTOS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 222
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 72
+    END
+
+    IDD_REPORT_SELECTION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 258
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 127
+    END
+
+    IDD_SEARCH_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 339
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 239
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SlideList.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#include ""afxprint.rc""       // printing/print preview resources\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_FILM_DETAILS DLGINIT
+BEGIN
+    IDC_FILM_MAKE, 0x403, 6, 0
+0x6f42, 0x746f, 0x0073, 
+    IDC_FILM_MAKE, 0x403, 6, 0
+0x6f4b, 0x6164, 0x006b, 
+    IDC_FILM_MAKE, 0x403, 7, 0
+0x6f4b, 0x696e, 0x6163, "\000" 
+    IDC_FILM_MAKE, 0x403, 8, 0
+0x654a, 0x7373, 0x706f, 0x0073, 
+    IDC_FILM_MAKE, 0x403, 5, 0
+0x7546, 0x696a, "\000" 
+    IDC_FILM_TYPE, 0x403, 13, 0
+0x6f43, 0x6f6c, 0x7275, 0x5020, 0x6972, 0x746e, "\000" 
+    IDC_FILM_TYPE, 0x403, 13, 0
+0x6f43, 0x6f6c, 0x7275, 0x5320, 0x696c, 0x6564, "\000" 
+    IDC_FILM_TYPE, 0x403, 9, 0
+0x5742, 0x5020, 0x6972, 0x746e, "\000" 
+    IDC_FILM_TYPE, 0x403, 9, 0
+0x5742, 0x5320, 0x696c, 0x6564, "\000" 
+    IDC_FILM_TYPE, 0x403, 6, 0
+0x744f, 0x6568, 0x0072, 
+    IDC_FILM_SIZE, 0x403, 5, 0
+0x3533, 0x6d6d, "\000" 
+    IDC_FILM_SIZE, 0x403, 6, 0
+0x744f, 0x6568, 0x0072, 
+    0
+END
+
+IDD_PHOTO_DETAILS DLGINIT
+BEGIN
+    IDC_RATING_LIST, 0x403, 9, 0
+0x2031, 0x202d, 0x6542, 0x7473, "\000" 
+    IDC_RATING_LIST, 0x403, 2, 0
+0x0032, 
+    IDC_RATING_LIST, 0x403, 2, 0
+0x0033, 
+    IDC_RATING_LIST, 0x403, 2, 0
+0x0034, 
+    IDC_RATING_LIST, 0x403, 10, 0
+0x2035, 0x202d, 0x6f57, 0x7372, 0x0074, 
+    0
+END
+
+IDD_CREATE_PHOTOS DLGINIT
+BEGIN
+    IDC_NUMBER_PHOTOS, 0x403, 2, 0
+0x0031, 
+    IDC_NUMBER_PHOTOS, 0x403, 2, 0
+0x0032, 
+    IDC_NUMBER_PHOTOS, 0x403, 2, 0
+0x0033, 
+    IDC_NUMBER_PHOTOS, 0x403, 2, 0
+0x0034, 
+    IDC_NUMBER_PHOTOS, 0x403, 2, 0
+0x0035, 
+    IDC_NUMBER_PHOTOS, 0x403, 2, 0
+0x0036, 
+    IDC_NUMBER_PHOTOS, 0x403, 2, 0
+0x0037, 
+    IDC_NUMBER_PHOTOS, 0x403, 2, 0
+0x0038, 
+    IDC_NUMBER_PHOTOS, 0x403, 2, 0
+0x0039, 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3031, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3131, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3231, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3331, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3431, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3531, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3631, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3731, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3831, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3931, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3032, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3132, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3232, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3332, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3432, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3532, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3632, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3732, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3832, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3932, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3033, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3133, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3233, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3333, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3433, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3533, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3633, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3733, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3833, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3933, "\000" 
+    IDC_NUMBER_PHOTOS, 0x403, 3, 0
+0x3034, "\000" 
+    0
+END
+
+IDD_SEARCH_DIALOG DLGINIT
+BEGIN
+    IDC_SEARCH_RATING, 0x403, 4, 0
+0x6e41, 0x0079, 
+    IDC_SEARCH_RATING, 0x403, 7, 0
+0x2031, 0x6e6f, 0x796c, "\000" 
+    IDC_SEARCH_RATING, 0x403, 12, 0
+0x2032, 0x726f, 0x6220, 0x7465, 0x6574, 0x0072, 
+    IDC_SEARCH_RATING, 0x403, 12, 0
+0x2033, 0x726f, 0x6220, 0x7465, 0x6574, 0x0072, 
+    IDC_SEARCH_RATING, 0x403, 12, 0
+0x2034, 0x726f, 0x6220, 0x7465, 0x6574, 0x0072, 
+    0
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\SlideList.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#include "afxprint.rc"       // printing/print preview resources
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

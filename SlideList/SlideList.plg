@@ -1,0 +1,49 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: SlideList - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\WINDOWS\TEMP\RSP71C1.TMP" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Release/SlideList.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\work\Photos\SlideList\PhotoDetailsDialog.cpp"
+"C:\work\Photos\SlideList\SlideListView.cpp"
+]
+Creating command line "cl.exe @C:\WINDOWS\TEMP\RSP71C1.TMP" 
+Creating temporary file "C:\WINDOWS\TEMP\RSP71C2.TMP" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/SlideList.pdb" /machine:I386 /out:"Release/SlideList.exe" 
+.\Release\DataFile.obj
+.\Release\DetailView.obj
+.\Release\FilmAddPhotos.obj
+.\Release\FilmDetailsDialog.obj
+.\Release\MainFrm.obj
+.\Release\PhotoDetailsDialog.obj
+.\Release\PhotoSearchDialog.obj
+.\Release\PrintingSupport.obj
+.\Release\ReportSelection.obj
+.\Release\SelectedPhotoView.obj
+.\Release\SlideList.obj
+.\Release\SlideListDoc.obj
+.\Release\SlideListView.obj
+.\Release\StdAfx.obj
+.\Release\SlideList.res
+]
+Creating command line "link.exe @C:\WINDOWS\TEMP\RSP71C2.TMP"
+<h3>Output Window</h3>
+Compiling...
+PhotoDetailsDialog.cpp
+SlideListView.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+SlideList.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

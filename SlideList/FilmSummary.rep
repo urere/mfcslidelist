@@ -1,0 +1,71 @@
+# REPORT:Summary of each film. Page per film.
+
+if ( $#ARGV+1 != 2 ) {
+	die "Two arguments expected";
+}
+
+$DataFile = $ARGV[0];
+$OutputFile = $ARGV[1];
+
+# Read in the print data
+do "$DataFile";
+
+# Open the report file
+open( REPORTFILE, ">$OutputFile" ) || die "Can't open $OutputFile";
+
+foreach $FilmId ( sort keys %Films ) {
+
+	# Setup the film specific information
+	# This is used for the page header
+	$Year =        $Films{$FilmId}{"Year"};
+	$Number =      $Films{$FilmId}{"Number"};
+	$Make =        $Films{$FilmId}{"Make"};
+	$Type =        $Films{$FilmId}{"Type"};
+	$Description = $Films{$FilmId}{"Description"};
+	$Notes       = $Films{$FilmId}{"Notes"};
+	
+	# Now go through all of the photos 
+	@Ph = split ' ', $Films{$FilmId}{"Photos"};
+	foreach $PhotoId ( @Ph ) {
+		
+		$Rating =        $Photos{$PhotoId}{"Rating"};
+		$PhDescription = $Photos{$PhotoId}{"Description"};
+		$Location =      $Photos{$PhotoId}{"Location"};
+	
+		write( REPORTFILE );
+	}
+	
+	# Force a new page for the next film
+	$Old = select( REPORTFILE );
+	$- = 0;
+	select ( $Old );
+}
+
+close( REPORTFILE );
+
+print( "Report Completed.\n" );
+
+# Report Format
+format REPORTFILE =
+@<<<<<<<<  @|||||  ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  ^<<<<<<<<<<<<<<<<<<<<<<<
+$PhotoId,  $Rating,$PhDescription,                 $Location
+~~                 ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  ^<<<<<<<<<<<<<<<<<<<<<<<
+                   $PhDescription,                 $Location
+.
+
+format REPORTFILE_TOP =
+===========================================================================
+Year: @<<<  Number: @<<<  Make: @<<<<<<<<<  Type: @<<<<<<<<<<<<<<< Page @<<
+      $Year,        $Number,    $Make,            $Type,                $%
+---------------------------------------------------------------------------
+@<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+$Description
+---------------------------------------------------------------------------
+Notes:  ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        $Notes
+        ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+~~      $Notes
+===========================================================================
+Photo      Rating  Description                     Location                
+---------------------------------------------------------------------------
+.
