@@ -1,0 +1,66 @@
+# REPORT:1st and 2nd Class Photographs
+
+# First parameter is the reprot data file
+# Second is the output file
+
+if ( $#ARGV+1 != 2 ) {
+	die "Two arguments expected";
+}
+
+$DataFile = $ARGV[0];
+$OutputFile = $ARGV[1];
+
+# Read in the print data
+do "$DataFile";
+
+# Open the report file
+open( REPORTFILE, ">$OutputFile" ) || die "Can't open $OutputFile";
+
+# 1st class
+foreach $PhotoId ( sort keys %Photos ) {
+
+	$Rating = $Photos{$PhotoId}{"Rating"};
+
+	if ( $Rating eq "1" ) {
+	
+		$Description = $Photos{$PhotoId}{"Description"};
+		$Location = $Photos{$PhotoId}{"Location"};
+
+		write( REPORTFILE );
+	}
+}
+
+# 2nd class
+foreach $PhotoId ( sort keys %Photos ) {
+
+	$Rating = $Photos{$PhotoId}{"Rating"};
+
+	if ( $Rating eq "2" ) {
+	
+		$Description = $Photos{$PhotoId}{"Description"};
+		$Location = $Photos{$PhotoId}{"Location"};
+
+		write( REPORTFILE );
+	}
+}
+
+close( REPORTFILE );
+
+print( "Report Completed.\n" );
+
+# Report Format
+format REPORTFILE =
+@<<<<<<<<  @|||||  ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  ^<<<<<<<<<<<<<<<<<<<<<<<
+$PhotoId,  $Rating,$Description,                   $Location
+~~                 ^<<<<<<<<<<<<<<<<<<<<<<<<<<<<<  ^<<<<<<<<<<<<<<<<<<<<<<<
+                   $Description,                   $Location
+.
+
+format REPORTFILE_TOP =
+===========================================================================
+1st and 2nd Class Photographs
+---------------------------------------------------------------------------
+Photo Id   Rating  Description                     Location        Page @<<
+                                                                        $%
+---------------------------------------------------------------------------
+.
