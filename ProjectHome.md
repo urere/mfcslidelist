@@ -1,0 +1,1 @@
+A crude MFC based Windows application for maintaining details of slides and other photographs.
